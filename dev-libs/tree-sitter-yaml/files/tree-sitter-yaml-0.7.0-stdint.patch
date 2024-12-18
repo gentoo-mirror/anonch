@@ -1,0 +1,26 @@
+error: unknown type name ‘int32_t’
+
+ src/schema.core.c | 1 +
+ src/schema.json.c | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/src/schema.core.c b/src/schema.core.c
+index 389061e..bf3497c 100644
+--- a/src/schema.core.c
++++ b/src/schema.core.c
+@@ -1,4 +1,5 @@
+ #include <stdlib.h>
++#include <stdint.h>
+ 
+ #define SCH_STT_FRZ -1
+ 
+diff --git a/src/schema.json.c b/src/schema.json.c
+index ce809ac..243c6f4 100644
+--- a/src/schema.json.c
++++ b/src/schema.json.c
+@@ -1,4 +1,5 @@
+ #include <stdlib.h>
++#include <stdint.h>
+ 
+ #define SCH_STT_FRZ -1
+ 
