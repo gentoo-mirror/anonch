@@ -5,7 +5,7 @@ EAPI=8
 
 inherit tree-sitter-grammar
 
-DESCRIPTION="OCaml grammar for Tree-sitter"
+DESCRIPTION="YAML grammar for Tree-sitter"
 HOMEPAGE="https://github.com/tree-sitter/tree-sitter-ocaml"
 
 LICENSE="MIT"
