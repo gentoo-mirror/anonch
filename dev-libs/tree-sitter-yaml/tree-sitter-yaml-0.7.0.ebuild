@@ -15,8 +15,9 @@ SLOT="0"
 KEYWORDS="amd64"
 
 # S="${WORKDIR}/${P}/yaml"
+IUSE="test"
 
-RESTRICT="mirror bindist"
+RESTRICT="mirror bindist !test? ( test )"
 
 TEST_DEPEND="dev-util/tree-sitter-cli"
 
