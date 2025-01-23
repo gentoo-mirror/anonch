@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+  <email>none@none</email>
+  <name>Anoncheg1</name>
+</maintainer>
+<longdescription>
+  telega.el is full featured unofficial client for Telegram platform
+  for GNU Emacs.
+</longdescription>
+<use>
+  <flag name="contrib">Install miscellanous extra features</flag>
+  <flag name="dbus">Ensure Emacs supports dbus, for notifications</flag>
+  <flag name="geo">Enable geolocation support with app-emacs/geo</flag>
+  <flag name="org">Enable Org links</flag>
+  <flag name="stickers">Add support for animated stickers</flag>
+  <flag name="tray">Enable AppIndicator support</flag>
+  <flag name="texinfo">Build and install Info documentation</flag>
+</use>
+<upstream>
+  <remote-id type="github">zevlg/telega.el</remote-id>
+</upstream>
+</pkgmetadata>
