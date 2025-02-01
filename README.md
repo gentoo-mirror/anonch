@@ -3,3 +3,5 @@
 - sci-libs/unhubbed-transformers - disable tokenizers, pyyaml, huggingface_hub dependencies
 
 Telega - Unoffical Telegram client. Include:  net-libs/tdlib, app-emacs/rainbow-identifiers, app-emacs/visual-fill-column
+
+net-libs/gumbo - HTML5 parsing library in C.

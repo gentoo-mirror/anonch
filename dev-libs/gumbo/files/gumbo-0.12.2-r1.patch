@@ -1,0 +1,77 @@
+ python/gumbo/gumboc.py                | 11 ++++++++---
+ python/gumbo/html5lib_adapter_test.py |  4 ++--
+ python/gumbo/soup_adapter.py          |  2 +-
+ python/gumbo/soup_adapter_test.py     |  2 +-
+ 4 files changed, 12 insertions(+), 7 deletions(-)
+
+diff --git a/python/gumbo/gumboc.py b/python/gumbo/gumboc.py
+index e506a63..fd15868 100644
+--- a/python/gumbo/gumboc.py
++++ b/python/gumbo/gumboc.py
+@@ -26,7 +26,7 @@ import sys
+ import contextlib
+ import ctypes
+ import os.path
+-import gumboc_tags
++from gumbo import gumboc_tags
+ 
+ DONT_WE_LIKE_PYTHON = sys.version_info[0] == 2
+ 
+@@ -38,8 +38,13 @@ elif sys.platform.startswith('win'):
+ 
+ try:
+   # First look for a freshly-built .so in the .libs directory, for development.
+-  _dll = ctypes.cdll.LoadLibrary(os.path.join(
+-      os.path.dirname(__file__), '..', '..', '.libs', _name_of_lib))
++
++  _dll = os.path.join('/usr/lib64/', _name_of_lib)
++  if not os.path.exists(_dll):
++    _dll = os.path.join('/usr/lib/', _name_of_lib)
++  if not os.path.exists(_dll):
++    _dll = os.path.join(os.path.dirname(__file__), '..', '..', '.libs', _name_of_lib)
++  _dll = ctypes.cdll.LoadLibrary(_dll)
+ except OSError:
+   # PyPI or setuptools install, look in the current directory.
+   _dll = ctypes.cdll.LoadLibrary(os.path.join(
+diff --git a/python/gumbo/html5lib_adapter_test.py b/python/gumbo/html5lib_adapter_test.py
+index 1575ab0..f79bbdb 100644
+--- a/python/gumbo/html5lib_adapter_test.py
++++ b/python/gumbo/html5lib_adapter_test.py
+@@ -22,9 +22,9 @@ import io
+ import unittest
+ import warnings
+ 
+-from html5lib import treebuilders
++from gumbo.html5lib import treebuilders
+ 
+-import html5lib_adapter
++from gumbo import html5lib_adapter
+ 
+ 
+ TREEBUILDER = treebuilders.getTreeBuilder('dom')
+diff --git a/python/gumbo/soup_adapter.py b/python/gumbo/soup_adapter.py
+index b18748f..2d86ff1 100644
+--- a/python/gumbo/soup_adapter.py
++++ b/python/gumbo/soup_adapter.py
+@@ -23,7 +23,7 @@ __author__ = 'jdtang@google.com (Jonathan Tang)'
+ 
+ import BeautifulSoup
+ 
+-import gumboc
++from gumbo import gumboc
+ 
+ 
+ def _utf8(text):
+diff --git a/python/gumbo/soup_adapter_test.py b/python/gumbo/soup_adapter_test.py
+index 014ee6a..620a931 100644
+--- a/python/gumbo/soup_adapter_test.py
++++ b/python/gumbo/soup_adapter_test.py
+@@ -18,7 +18,7 @@ __author__ = 'jdtang@google.com (Jonathan Tang)'
+ 
+ import unittest
+ 
+-import soup_adapter
++from gumbo import soup_adapter
+ 
+ 
+ class SoupAdapterTest(unittest.TestCase):
