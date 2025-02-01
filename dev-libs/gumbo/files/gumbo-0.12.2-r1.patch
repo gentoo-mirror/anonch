@@ -1,8 +1,10 @@
  python/gumbo/gumboc.py                | 11 ++++++++---
+ python/gumbo/gumboc_test.py           |  2 +-
+ python/gumbo/html5lib_adapter.py      |  2 +-
  python/gumbo/html5lib_adapter_test.py |  4 ++--
  python/gumbo/soup_adapter.py          |  2 +-
  python/gumbo/soup_adapter_test.py     |  2 +-
- 4 files changed, 12 insertions(+), 7 deletions(-)
+ 6 files changed, 14 insertions(+), 9 deletions(-)
 
 diff --git a/python/gumbo/gumboc.py b/python/gumbo/gumboc.py
 index e506a63..fd15868 100644
@@ -33,6 +35,32 @@ index e506a63..fd15868 100644
  except OSError:
    # PyPI or setuptools install, look in the current directory.
    _dll = ctypes.cdll.LoadLibrary(os.path.join(
+diff --git a/python/gumbo/gumboc_test.py b/python/gumbo/gumboc_test.py
+index 8f05c03..b3206db 100644
+--- a/python/gumbo/gumboc_test.py
++++ b/python/gumbo/gumboc_test.py
+@@ -21,7 +21,7 @@ import io
+ 
+ import unittest
+ 
+-import gumboc
++from gumbo import gumboc
+ 
+ 
+ class CtypesTest(unittest.TestCase):
+diff --git a/python/gumbo/html5lib_adapter.py b/python/gumbo/html5lib_adapter.py
+index 9cf8512..ee86373 100644
+--- a/python/gumbo/html5lib_adapter.py
++++ b/python/gumbo/html5lib_adapter.py
+@@ -23,7 +23,7 @@ tree, and gives back a DOM tree in that format.  Example:
+ 
+ __author__ = 'jdtang@google.com (Jonathan Tang)'
+ 
+-import gumboc
++from gumbo import gumboc
+ 
+ # These should match html5lib.constants.namespaces, and be indexed by the enum
+ # values of gumboc.Namespace
 diff --git a/python/gumbo/html5lib_adapter_test.py b/python/gumbo/html5lib_adapter_test.py
 index 1575ab0..f79bbdb 100644
 --- a/python/gumbo/html5lib_adapter_test.py
