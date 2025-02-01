@@ -4,4 +4,4 @@
 
 Telega - Unoffical Telegram client. Include:  net-libs/tdlib, app-emacs/rainbow-identifiers, app-emacs/visual-fill-column
 
-net-libs/gumbo - HTML5 parsing library in C.
+net-libs/gumbo - HTML5 parsing library in C. - added Python bindings
