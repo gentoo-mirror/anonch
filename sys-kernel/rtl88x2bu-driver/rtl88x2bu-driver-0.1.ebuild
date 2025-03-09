@@ -18,6 +18,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~sparc x86"
 
+RESTRICT="mirror bindist"
+
 PATCHES=(
     # rename aes_encrypt that conflict to something postfixed
     "${FILESDIR}"/${PV}-fix-multiple-definition-of-aes_encrypt.patch

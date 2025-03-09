@@ -17,6 +17,7 @@ S="${WORKDIR}/telega.el-${COMMIT}"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 ~arm arm64 ~x86 ~amd64-linux ~x86-linux"
+RESTRICT="mirror bindist"
 IUSE="contrib dbus doc geo org stickers tray test texinfo"
 REQUIRED_USE="texinfo? ( doc )"
 # emerging with geo not tested

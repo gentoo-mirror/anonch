@@ -16,6 +16,7 @@ S="${WORKDIR}/td-${PV_COMMIT}"
 LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS="amd64 ~arm ~arm64 ~x86"
+RESTRICT="mirror bindist"
 IUSE="clang cli debug doc +gcc java low-ram lto test"
 
 REQUIRED_USE="
