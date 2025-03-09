@@ -10,5 +10,14 @@ index 3526cac..f020a4d 100644
  	help
  	  Help message of RTL8822BU
 -
+--- a/Kconfig
++++ b/Kconfig
+@@ -1,5 +1,5 @@
+ config RTL8822BU
+ 	tristate "Realtek 8822B USB WiFi"
+-	depends on USB && CFG80211
++	depends on USB && CFG80211 && MAC80211 && PACKET
+ 	help
+ 	  Help message of RTL8822BU
 --
 2.45.3

@@ -23,7 +23,7 @@ RESTRICT="mirror bindist"
 PATCHES=(
     # rename aes_encrypt that conflict to something postfixed
     "${FILESDIR}"/${PV}-fix-multiple-definition-of-aes_encrypt.patch
-    "${FILESDIR}"/${PV}-Kconfig-depends-on-CFG80211.patch
+    "${FILESDIR}"/${PV}-Kconfig-depends-on.patch
 )
 
 RTL=rtl8822b # rtl8812au
