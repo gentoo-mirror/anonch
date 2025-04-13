@@ -4,14 +4,13 @@
 EAPI=8
 
 COMMIT_DRIVER="2ca4545cb12ece0f0a068c297e1543c30a8ff709"
-COMMIT_SCRIPTS="0fb4b0d8597108ff85f6bab8532812b94c92d840"
+COMMIT_SCRIPTS="cecf84395789cace45c7bd2b7fad338d9bf393eb"
 
 DESCRIPTION="RTL8822CE driver for PCIe and script to install in kernel without firmware."
 HOMEPAGE="https://github.com/juanro49/rtl88x2ce-dkms"
 SRC_URI="https://github.com/juanro49/rtl88x2ce-dkms/archive/${COMMIT_DRIVER}.tar.gz -> rtl88x2ce-dkms.tar.gz
 https://github.com/Anoncheg1/linux-drivers-install-scripts/archive/${COMMIT_SCRIPTS}.tar.gz -> ${P}-${COMMIT_SCRIPTS}.tar.gz"
 
-# S="${WORKDIR}/linux-drivers-install-scripts-${COMMIT_SCRIPTS}"
 S="${WORKDIR}/rtl88x2ce-dkms-${COMMIT_DRIVER}"
 
 LICENSE="MIT"

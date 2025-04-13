@@ -4,14 +4,13 @@
 EAPI=8
 
 COMMIT_DRIVER="bd8baa17dc0c07510a7a56c52410a81c363b85ae"
-COMMIT_SCRIPTS="2ccfce04436b5849d109d841c829d6eb43b2521b"
+COMMIT_SCRIPTS="cecf84395789cace45c7bd2b7fad338d9bf393eb"
 
 DESCRIPTION="RTL8822BU driver for USB and script to install in kernel without firmware."
 HOMEPAGE="https://github.com/morrownr/88x2bu-20210702"
 SRC_URI="https://github.com/morrownr/88x2bu-20210702/archive/${COMMIT_DRIVER}.tar.gz -> 88x2bu-20210702.tar.gz
-https://github.com/Anoncheg1/linux-drivers-install-scripts/archive/${COMMIT_SCRIPTS}.tar.gz -> ${P}.tar.gz"
+https://github.com/Anoncheg1/linux-drivers-install-scripts/archive/${COMMIT_SCRIPTS}.tar.gz -> ${P}-${COMMIT_SCRIPTS}.tar.gz"
 
-# S="${WORKDIR}/linux-drivers-install-scripts-${COMMIT_SCRIPTS}"
 S="${WORKDIR}/88x2bu-20210702-${COMMIT_DRIVER}"
 
 LICENSE="MIT"
