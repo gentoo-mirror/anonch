@@ -21,6 +21,7 @@ RESTRICT="mirror bindist"
 
 PATCHES=(
         "${FILESDIR}"/${PV}-Kconfig-and-Makefile-fixes.patch
+        "${FILESDIR}"/${PV}-disable-debugging.patch
 )
 
 # - for info, not used:
