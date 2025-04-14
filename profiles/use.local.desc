@@ -1,0 +1,34 @@
+# This file is deprecated as per GLEP 56 in favor of metadata.xml.
+# Please add your descriptions to your package's metadata.xml ONLY.
+# * generated automatically using pmaint *
+
+app-emacs/telega:contrib - Install miscellanous extra features
+app-emacs/telega:dbus - Ensure Emacs supports dbus, for notifications
+app-emacs/telega:geo - Enable geolocation support with app-emacs/geo
+app-emacs/telega:org - Enable Org links
+app-emacs/telega:stickers - Add support for animated stickers
+app-emacs/telega:texinfo - Build and install Info documentation
+app-emacs/telega:tray - Enable AppIndicator support
+net-analyzer/hydra:gcrypt - Enable radmin2 support through dev-libs/libgcrypt
+net-analyzer/hydra:libssh - Enable SSH support through net-libs/libssh
+net-analyzer/hydra:mongodb - MongoDB support through dev-libs/mongo-c-driver
+net-libs/tdlib:clang - Compile using Clang
+net-libs/tdlib:cli - Install tg_cli
+net-libs/tdlib:gcc - Compile using GCC
+net-libs/tdlib:low-ram - Split source files during compilation (for systems with less than 3.5G RAM)
+net-libs/tdlib:lto - Enable Link Time Optimization
+sci-libs/caffe2:distributed - Support distributed applications
+sci-libs/caffe2:fbgemm - Use FBGEMM
+sci-libs/caffe2:ffmpeg - Add support for video processing operators
+sci-libs/caffe2:flash - Enable flash attention
+sci-libs/caffe2:gloo - Use sci-libs/gloo
+sci-libs/caffe2:mkl - Use sci-libs/mkl for blas, lapack and sparse blas routines
+sci-libs/caffe2:nnpack - Use NNPACK
+sci-libs/caffe2:numpy - Add support for math operations through numpy
+sci-libs/caffe2:onednn - Use oneDNN
+sci-libs/caffe2:openblas - Use sci-libs/openblas for blas routines
+sci-libs/caffe2:opencv - Add support for image processing operators
+sci-libs/caffe2:openmp - Use OpenMP for parallel code
+sci-libs/caffe2:qnnpack - Use QNNPACK
+sci-libs/caffe2:rocm - Enable ROCm gpu computing support
+sci-libs/caffe2:xnnpack - Use XNNPACK

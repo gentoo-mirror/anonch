@@ -1,0 +1,14 @@
+BDEPEND=test? ( dev-util/tree-sitter-cli )
+DEFINED_PHASES=compile configure install prepare test
+DESCRIPTION=YAML grammar for Tree-sitter
+EAPI=8
+HOMEPAGE=https://github.com/tree-sitter/tree-sitter-ocaml
+INHERIT=tree-sitter-grammar
+IUSE=test test
+KEYWORDS=amd64
+LICENSE=MIT
+RESTRICT=mirror bindist !test? ( test ) !test? ( test )
+SLOT=0
+SRC_URI=https://github.com/tree-sitter-grammars/tree-sitter-yaml/archive/refs/tags/v0.7.0.tar.gz
+_eclasses_=edo	367e103a74bf77e6a8da7894d999fa3c	toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	multilib	b2a329026f2e404e9e371097dda47f96	tree-sitter-grammar	4f6f80050c180a8df6cc8d063b6d7df5
+_md5_=18286986d05eafe9db8cd3d32e81488f
