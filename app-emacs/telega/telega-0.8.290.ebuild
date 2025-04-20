@@ -6,6 +6,8 @@ NEED_EMACS="27.1"
 
 inherit elisp
 
+# - Version note: server 0.8.2
+
 COMMIT="3d2e5ee323366906b00d8ed40e818d41e82b73e5"
 
 DESCRIPTION="GNU Emacs telegram client (unofficial)"
