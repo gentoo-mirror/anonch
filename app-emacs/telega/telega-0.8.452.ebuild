@@ -6,9 +6,9 @@ NEED_EMACS="27.1"
 
 inherit elisp
 
-# - Version note: server 0.8.2
+# - Version note: server 0.8.3
 
-COMMIT="3d2e5ee323366906b00d8ed40e818d41e82b73e5"
+COMMIT="ff06f58364375c96477561f265e3dbf55a8ad231"
 
 DESCRIPTION="GNU Emacs telegram client (unofficial)"
 HOMEPAGE="https://zevlg.github.io/telega.el"
