@@ -12,5 +12,5 @@ REQUIRED_USE=texinfo? ( doc )
 RESTRICT=mirror bindist
 SLOT=0
 SRC_URI=https://github.com/zevlg/telega.el/archive/3d2e5ee323366906b00d8ed40e818d41e82b73e5.tar.gz -> telega-0.8.290.tar.gz
-_eclasses_=elisp-common	4ee3453b022aae73f4d827a0f98920c2	elisp	8dfc7a00348fe9c91895014adc78a4a5
+_eclasses_=elisp-common	fe05085d051330f15cf7201109b5cd23	elisp	8dfc7a00348fe9c91895014adc78a4a5
 _md5_=3bc7113b36b9093ca165ac66ed408232
