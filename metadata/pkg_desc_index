@@ -1,6 +1,7 @@
 app-emacs/rainbow-identifiers 0.2.2 9999: Highlight identifiers according to their names
 app-emacs/telega 0.8.290 0.8.452: GNU Emacs telegram client (unofficial)
 app-emacs/visual-fill-column 2.4 9999: fill-column for visual-line-mode
+app-misc/kbdtimeout 0.1: A keyboard daemon that execute command if there was no event for timegap.
 app-misc/keyd 2.5.0 2.5.0-r1: A key remapping daemon for linux
 dev-libs/gumbo 0.12.1 0.12.2 0.12.2-r1: The HTML5 parsing algorithm implemented as a pure C99 library
 dev-libs/tree-sitter-yaml 0.7.0: YAML grammar for Tree-sitter
