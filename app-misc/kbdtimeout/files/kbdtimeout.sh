@@ -2,12 +2,12 @@
 
 # --- Read configuration ---
 # Timeout in seconds
-TIMEOUT=$(cat /etc/kbdtimeout/default.conf | grep TIMEOUT | grep -o '[0-9]*') #300 # 5 min
+TIMEOUT=$(cat /etc/kbdtimeout/default.conf | grep TIMEOUT | grep -o '[0-9]*') || TIMEOUT=180
 # characters have been readed from keyboard device directly
-CAT_LEN_READ=$(cat /etc/kbdtimeout/default.conf | grep CAT_LEN_READ | grep -o '[0-9]*') # 25
+CAT_LEN_READ=$(cat /etc/kbdtimeout/default.conf | grep CAT_LEN_READ | grep -o '[0-9]*') || CAT_LEN_READ=25
 # Command to execute after timeout
-COMMAND_TO_EXECUTE=$(cat /etc/kbdtimeout/default.conf | grep COMMAND_TO_EXECUTE | cut -d '=' -f 2)
-DEBUG=$(cat /etc/kbdtimeout/default.conf | grep DEBUG | cut -d '=' -f 2)
+COMMAND_TO_EXECUTE=$(cat /etc/kbdtimeout/default.conf | grep COMMAND_TO_EXECUTE | cut -d '=' -f 2) || COMMAND_TO_EXECUTE="echo Here should be command for locking your laptop"
+DEBUG=$(cat /etc/kbdtimeout/default.conf | grep DEBUG | cut -d '=' -f 2) || DEBUG=
 
 # --- Detect device ---
 # The specific event device for your keyboard
