@@ -7,10 +7,10 @@ INHERIT=elisp
 IUSE=contrib dbus doc geo org stickers tray test texinfo
 KEYWORDS=amd64 ~arm arm64 ~x86 ~amd64-linux ~x86-linux
 LICENSE=GPL-3
-RDEPEND=>=app-editors/emacs-29 >=app-emacs/transient-0.3.0 >=app-emacs/rainbow-identifiers-0.2.2 >=app-emacs/visual-fill-column-1.9 >=net-libs/tdlib-1.8.29 contrib? ( app-emacs/alert app-emacs/all-the-icons app-emacs/dashboard app-emacs/esxml app-emacs/language-detection ) dbus? ( app-editors/emacs[dbus] ) geo? ( app-emacs/geo ) stickers? ( media-libs/tgs2png ) tray? ( >=dev-libs/libappindicator-3 ) >=app-editors/emacs-27.1:*
+RDEPEND=>=app-editors/emacs-29[svg,webp,gif,libxml2] >=app-emacs/transient-0.3.0 >=app-emacs/rainbow-identifiers-0.2.2 >=app-emacs/visual-fill-column-1.9 >=net-libs/tdlib-1.8.29 contrib? ( app-emacs/alert app-emacs/all-the-icons app-emacs/dashboard app-emacs/esxml app-emacs/language-detection ) dbus? ( app-editors/emacs[dbus] ) geo? ( app-emacs/geo ) stickers? ( media-libs/tgs2png ) tray? ( >=dev-libs/libappindicator-3 ) >=app-editors/emacs-27.1:*
 REQUIRED_USE=texinfo? ( doc )
 RESTRICT=mirror bindist
 SLOT=0
 SRC_URI=https://github.com/zevlg/telega.el/archive/ff06f58364375c96477561f265e3dbf55a8ad231.tar.gz -> telega-0.8.452.tar.gz
 _eclasses_=elisp-common	fe05085d051330f15cf7201109b5cd23	elisp	8dfc7a00348fe9c91895014adc78a4a5
-_md5_=f704829179897c1195889d7c3d9debb1
+_md5_=8cc6d70621e6bef1d82cf89f2d28bc7c
