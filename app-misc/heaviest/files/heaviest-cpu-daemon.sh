@@ -35,5 +35,5 @@ while true; do
     # ps -eo pid,user,pcpu,pmem,cmd --sort=-pcpu | head -n 21 > "$LOG_DIR/top_procs_01"
 
     # 4. Wait a second before repeating
-    sleep 1
+    sleep 2
 done
