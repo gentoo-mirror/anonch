@@ -16,7 +16,7 @@ cpu_wt = defaultdict(float)
 
 # Process all files in one pass
 for idx, file_path in enumerate(files):
-    weight = idx + 1
+    weight = 1 + idx / len(files) /2 # original was "idx + 1" with huge emphasize on recent
     if DEBUG:
         print(f'Processing {file_path} with weight {weight}')
 
