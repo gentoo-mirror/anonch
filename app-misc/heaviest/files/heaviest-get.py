@@ -7,6 +7,10 @@ from collections import defaultdict
 # Add a debug flag that can be enabled via command line argument
 DEBUG = "--debug" in sys.argv
 
+WEIGHT_MULTIPLIER = None
+if len(sys.argv) > 1:
+    WEIGHT_MULTIPLIER = float(sys.argv[1])
+
 # Get files directly from Python - more efficient
 files = sorted(glob.glob('/tmp/top_procs/top_procs_*'))
 
@@ -14,9 +18,13 @@ files = sorted(glob.glob('/tmp/top_procs/top_procs_*'))
 cpu_sum = defaultdict(float)
 cpu_wt = defaultdict(float)
 
+lfs = len(files)
 # Process all files in one pass
 for idx, file_path in enumerate(files):
-    weight = 1 + idx / len(files) /2 # original was "idx + 1" with huge emphasize on recent
+    if WEIGHT_MULTIPLIER:
+        weight = 1 + (lfs-idx) / WEIGHT_MULTIPLIER
+    else:
+        weight = 1 + (lfs-idx) / len(files) / 1.5
     if DEBUG:
         print(f'Processing {file_path} with weight {weight}')
 
@@ -64,7 +72,10 @@ for proc, sum_val in cpu_sum.items():
         max_proc = proc
 
 # Print final result
-if DEBUG:
+if "--help" in sys.argv:
+    print("Usage: harvest 2.2 [--debug] [--help]. Where 2.2 is weight 99 - means no emphasize recent measurements.")
+
+elif DEBUG:
     print('===========================================')
     print(f'Heaviest recent CPU process: {max_proc}')
     print(f'Weighted average CPU usage: {max_val:.2f}%')
