@@ -81,8 +81,11 @@ elif DEBUG:
     print(f'Weighted average CPU usage: {max_val:.2f}%')
     print('===========================================')
 else:
+    # Remove any slashes from the name if it is kernel thread
+    if max_proc.startswith('['):
+        program_name = program_name.replace('/', '')
     # In non-debug mode, just output the name of the heaviest process
-    program_name = os.path.basename(max_proc)
+    program_name = os.path.basename(program_name)
     if program_name != max_proc:
         max_proc = program_name
     print(max_proc, f'{max_val:.2f}%')
