@@ -8,7 +8,6 @@ dev-libs/gumbo 0.12.1 0.12.2 0.12.2-r1: The HTML5 parsing algorithm implemented 
 dev-libs/tree-sitter-yaml 0.7.0: YAML grammar for Tree-sitter
 net-analyzer/hydra 9.5-r10 9.5-r11: Parallelized network login hacker
 net-libs/tdlib 1.8.29 1.8.45: Cross-platform library for building Telegram clients
-sci-libs/safetensors 0.4.3-r1 0.4.3-r2: Simple, safe way to store and distribute tensors
 sci-libs/unhubbed-transformers 4.45.0: Transformers, sans integration with Huggingface hub.
 sci-ml/safetensors 0.4.5-r88882 0.5.3-r88881: Simple, safe way to store and distribute tensors
 sys-kernel/rtl8822ce-driver 0.1: RTL8822CE driver for PCIe and script to install in kernel without firmware.
