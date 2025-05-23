@@ -72,10 +72,10 @@ src_prepare() {
 	distutils-r1_src_prepare
 	rm tests/test_{tf,paddle,flax}_comparison.py || die
 	rm benches/test_{pt,tf,paddle,flax}.py || die
-	# replace dependencies.
+	# - replace dependencies.
 	cp ${FILESDIR}/Cargo-${PVR}.toml "$WORKDIR"/safetensors-${PV}/Cargo.toml
 	cp ${FILESDIR}/Cargo-safetensors-python-${PVR}.toml "$WORKDIR"/safetensors-${PV}/bindings/python/Cargo.toml
-	# Work well without locking.
+	# - Work well without locking.
 	rm "$WORKDIR"/safetensors-${PV}/bindings/python/Cargo.lock
 }
 
