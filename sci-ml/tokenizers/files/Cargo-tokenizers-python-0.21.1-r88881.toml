@@ -1,0 +1,78 @@
+[package]
+name = "tokenizers-python"
+version = "0.21.1"
+authors = ["Anthony MOI <m.anthony.moi@gmail.com>"]
+edition = "2021"
+
+[lib]
+name = "tokenizers"
+crate-type = ["cdylib"]
+
+[dependencies]
+rayon = "1.10.0"
+serde = { version = "1.0.219", features = ["rc", "derive"] }
+serde_json = "1.0.140"
+libc = "0.2.172"
+# env_logger = "0.11.8"
+pyo3 = { version = "0.25", features = ["abi3", "abi3-py39"] }
+# numpy = "0.23"
+numpy = "0.25.0"
+# ndarray = "0.16.1"
+itertools = "0.12.1"
+# -----
+# itertools = { version = "0.12.1", default-features = false, features = ["std"], optional = true }
+either = { version = "1.15.0", default-features = false, features = ["std"], optional = true }
+# libc = { version = "0.2.172", default-features = false, features = ["std"], optional = true }
+# numpy = { version = "0.25.0", default-features = false, features = ["std"], optional = true }
+ndarray = { version = "0.16.1", default-features = false, features = ["std"], optional = true }
+matrixmultiply = { version = "0.3.10", default-features = false, features = ["std"], optional = true }
+rawpointer = { version = "0.2.1", default-features = false, optional = true }
+# [build-dependencies] = { version = "", default-features = false, features = ["std"], optional = true }
+autocfg = { version = "1.4.0", default-features = false, optional = true }
+num-complex = { version = "0.4.6", default-features = false, features = ["std"], optional = true }
+num-traits = { version = "0.2.19", default-features = false, features = ["std"], optional = true }
+# [build-dependencies] = { version = "", default-features = false, features = ["std"], optional = true }
+num-integer = { version = "0.1.46", default-features = false, features = ["std"], optional = true }
+# pyo3 = { version = "0.25.0", default-features = false, features = ["std"], optional = true }
+indoc = { version = "2.0.6", default-features = false, optional = true }
+memoffset = { version = "0.9.1", default-features = false, optional = true }
+# [build-dependencies] = { version = "", default-features = false, features = ["std"], optional = true }
+once_cell = { version = "1.21.3", default-features = false, features = ["std"], optional = true }
+pyo3-ffi = { version = "0.25.0", default-features = false, optional = true }
+# [build-dependencies] = { version = "", default-features = false, features = ["std"], optional = true }
+pyo3-build-config = { version = "0.25.0", default-features = false, optional = true }
+target-lexicon = { version = "0.13.2", default-features = false, features = ["std"], optional = true }
+# [build-dependencies] = { version = "", default-features = false, features = ["std"], optional = true }
+pyo3-macros = { version = "0.25.0", default-features = false, optional = true }
+proc-macro2 = { version = "1.0.95", default-features = false, optional = true }
+unicode-ident = { version = "1.0.18", default-features = false, optional = true }
+pyo3-macros-backend = { version = "0.25.0", default-features = false, optional = true }
+heck = { version = "0.5.0", default-features = false, optional = true }
+quote = { version = "1.0.40", default-features = false, optional = true }
+syn = { version = "2.0.101", default-features = false, optional = true }
+# [build-dependencies] = { version = "", default-features = false, features = ["std"], optional = true }
+unindent = { version = "0.2.4", default-features = false, optional = true }
+# [build-dependencies] = { version = "", default-features = false, features = ["std"], optional = true }
+rustc-hash = { version = "2.1.1", default-features = false, features = ["std"], optional = true }
+# [build-dependencies] = { version = "", default-features = false, features = ["std"], optional = true }
+# rayon = { version = "1.10.0", default-features = false, features = ["std"], optional = true }
+rayon-core = { version = "1.12.1", default-features = false, optional = true }
+crossbeam-deque = { version = "0.8.6", default-features = false, features = ["std"], optional = true }
+crossbeam-epoch = { version = "0.9.18", default-features = false, features = ["std"], optional = true }
+crossbeam-utils = { version = "0.8.21", default-features = false, features = ["std"], optional = true }
+# serde = { version = "1.0.219", default-features = false, features = ["std"], optional = true }
+serde_derive = { version = "1.0.219", default-features = false, optional = true }
+# serde_json = { version = "1.0.140", default-features = false, features = ["std"], optional = true }
+itoa = { version = "1.0.15", default-features = false, optional = true }
+memchr = { version = "2.7.4", default-features = false, features = ["std"], optional = true }
+ryu = { version = "1.0.20", default-features = false, optional = true }
+
+[dependencies.tokenizers]
+path = "../../tokenizers"
+
+# [dev-dependencies]
+# tempfile = "3.10"
+# pyo3 = { version = "0.23", features = ["auto-initialize"] }
+
+[features]
+defaut = ["pyo3/extension-module"]

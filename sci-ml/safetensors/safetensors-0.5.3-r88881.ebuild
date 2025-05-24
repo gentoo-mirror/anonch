@@ -34,7 +34,7 @@ CRATES="
 	unindent@0.2.4
 	portable-atomic@1.11.0
 "
-
+# safetensors@0.5.3
 DISTUTILS_USE_PEP517=maturin
 PYTHON_COMPAT=( python3_{10..13} )
 
@@ -73,10 +73,8 @@ src_prepare() {
 	rm tests/test_{tf,paddle,flax}_comparison.py || die
 	rm benches/test_{pt,tf,paddle,flax}.py || die
 	# - replace dependencies.
-	cp ${FILESDIR}/Cargo-${PVR}.toml "$WORKDIR"/safetensors-${PV}/Cargo.toml
-	cp ${FILESDIR}/Cargo-safetensors-python-${PVR}.toml "$WORKDIR"/safetensors-${PV}/bindings/python/Cargo.toml
-	# - Work well without locking.
-	rm "$WORKDIR"/safetensors-${PV}/bindings/python/Cargo.lock
+	cp ${FILESDIR}/Cargo-${PVR}.toml "$WORKDIR"/${PN}-${PV}/${PN}/Cargo.toml
+	cp ${FILESDIR}/Cargo-safetensors-python-${PVR}.toml "$WORKDIR"/${PN}-${PV}/bindings/python/Cargo.toml
 }
 
 src_configure() {
