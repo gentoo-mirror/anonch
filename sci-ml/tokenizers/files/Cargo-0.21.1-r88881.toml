@@ -1,0 +1,151 @@
+[package]
+authors = ["Anthony MOI <m.anthony.moi@gmail.com>", "Nicolas Patry <patry.nicolas@protonmail.com>"]
+edition = "2018"
+name = "tokenizers"
+version = "0.21.1"
+homepage = "https://github.com/huggingface/tokenizers"
+repository = "https://github.com/huggingface/tokenizers"
+documentation = "https://docs.rs/tokenizers/"
+license = "Apache-2.0"
+keywords = ["tokenizer", "NLP", "huggingface", "BPE", "WordPiece"]
+readme = "./README.md"
+description = """
+Provides an implementation of today's most used tokenizers,
+with a focus on performances and versatility.
+"""
+exclude = [ "rust-toolchain", "target/*", "Cargo.lock", "benches/*.txt", "benches/*.json", "data/*" ]
+
+[lib]
+name = "tokenizers"
+path = "src/lib.rs"
+bench = false
+
+[[bench]]
+name = "bpe_benchmark"
+harness = false
+path = "tokenizers/benches/bpe_benchmark.rs"
+
+[[bench]]
+name = "bert_benchmark"
+harness = false
+path = "tokenizers/benches/bert_benchmark.rs"
+
+[[bench]]
+name = "layout_benchmark"
+harness = false
+path = "tokenizers/benches/layout_benchmark.rs"
+
+[[bench]]
+name = "unigram_benchmark"
+harness = false
+path = "tokenizers/benches/unigram_benchmark.rs"
+
+[[bench]]
+name = "llama3"
+# required-features = ["http"]
+harness = false
+path = "tokenizers/benches/llama3.rs"
+
+[dependencies]
+lazy_static = "1.5"
+rand = "0.8.5"
+onig = { version = "6.4.0", default-features = false, optional = true }
+regex = "1.11.1"
+regex-syntax = "0.8.5"
+rayon = "1.10.0"
+rayon-cond = "0.3.0"
+serde = { version = "1.0.219", features = [ "derive" ] }
+serde_json = "1.0.140"
+unicode-normalization-alignments = "0.1.12"
+unicode_categories = "0.1.1"
+unicode-segmentation = "1.12.0"
+# indicatif = {version = "0.17.11", optional = true}
+itertools = "0.13.0"
+# - also in dependencies:
+# itertools = "0.11.0"
+log = "0.4.27"
+derive_builder = "0.20.2"
+spm_precompiled = "0.1.4"
+# hf-hub = { version = "0.4.1", features = ["ureq"], default-features = false, optional = true }
+aho-corasick = "1.1.3"
+paste = "1.0.15"
+macro_rules_attribute = "0.2.0"
+thiserror = "2.0.12"
+# fancy-regex = { version = "0.14.0", default-features = false, optional = true }
+# getrandom = { version = "0.2.16" }
+esaxx-rs = { version = "0.1.10", default-features = false, features=[]}
+monostate = "0.1.14"
+
+memchr = { version = "2.7.4", default-features = false, features = ["std"], optional = true }
+derive_builder_macro = { version = "0.20.2", default-features = false, optional = true }
+derive_builder_core = { version = "0.20.2", default-features = false, optional = true }
+darling = { version = "0.20.11", default-features = false, optional = true }
+darling_core = { version = "0.20.11", default-features = false, optional = true }
+fnv = { version = "1.0.7", default-features = false, features = ["std"], optional = true }
+ident_case = { version = "1.0.1", default-features = false, optional = true }
+proc-macro2 = { version = "1.0.95", default-features = false, optional = true }
+unicode-ident = { version = "1.0.18", default-features = false, optional = true }
+quote = { version = "1.0.40", default-features = false, optional = true }
+strsim = { version = "0.11.1", default-features = false, optional = true }
+syn = { version = "2.0.101", default-features = false, optional = true }
+darling_macro = { version = "0.20.11", default-features = false, optional = true }
+# - [build-dependencies]
+cc = { version = "1.2.23", default-features = false, optional = true }
+shlex = { version = "1.3.0", default-features = false, features = ["std"], optional = true }
+cfg-if = { version = "1.0.0", default-features = false, optional = true }
+libc = { version = "0.2.172", default-features = false, features = ["std"], optional = true }
+console = { version = "0.15.11", default-features = false, optional = true }
+once_cell = { version = "1.21.3", default-features = false, features = ["std"], optional = true }
+# features = ["std"]
+unicode-width = { version = "0.2.0", default-features = false, optional = true }
+number_prefix = { version = "0.4.0", default-features = false, features = ["std"], optional = true }
+portable-atomic = { version = "1.11.0", default-features = false, features = ["std"], optional = true }
+either = { version = "1.15.0", default-features = false, features = ["std"], optional = true }
+macro_rules_attribute-proc_macro = { version = "0.2.0", default-features = false, optional = true }
+monostate-impl = { version = "0.1.14", default-features = false, optional = true }
+serde_derive = { version = "1.0.219", default-features = false, optional = true }
+bitflags = { version = "1.3.2", default-features = false, optional = true }
+onig_sys = { version = "69.8.1", default-features = false, optional = true }
+# - [build-dependencies]
+pkg-config = { version = "0.3.32", default-features = false, optional = true }
+rand_chacha = { version = "0.3.1", default-features = false, features = ["std"], optional = true }
+ppv-lite86 = { version = "0.2.21", default-features = false, features = ["std"], optional = true }
+zerocopy = { version = "0.8.25", default-features = false, features = ["std"], optional = true }
+rand_core = { version = "0.6.4", default-features = false, features = ["std"], optional = true }
+rayon-core = { version = "1.12.1", default-features = false, optional = true }
+crossbeam-deque = { version = "0.8.6", default-features = false, features = ["std"], optional = true }
+crossbeam-epoch = { version = "0.9.18", default-features = false, features = ["std"], optional = true }
+crossbeam-utils = { version = "0.8.21", default-features = false, features = ["std"], optional = true }
+regex-automata = { version = "0.4.9", default-features = false, features = ["std"], optional = true }
+itoa = { version = "1.0.15", default-features = false, optional = true }
+ryu = { version = "1.0.20", default-features = false, optional = true }
+base64 = { version = "0.13.1", default-features = false, features = ["std"], optional = true }
+nom = { version = "7.1.3", default-features = false, features = ["std"], optional = true }
+minimal-lexical = { version = "0.2.1", default-features = false, features = ["std"], optional = true }
+thiserror-impl = { version = "2.0.12", default-features = false, optional = true }
+smallvec = { version = "1.15.0", default-features = false, optional = true }
+
+
+[features]
+# "progressbar"
+default = ["onig", "esaxx_fast"]
+esaxx_fast = ["esaxx-rs/cpp"]
+# progressbar = ["indicatif"]
+# http = ["hf-hub"]
+# unstable_wasm = ["fancy-regex", "getrandom/js"]
+# rustls-tls = ["hf-hub?/rustls-tls"]
+
+# [dev-dependencies]
+# criterion = "0.5"
+# tempfile = "3.10"
+# assert_approx_eq = "1.1"
+# tracing = "0.1"
+# tracing-subscriber = "0.3.18"
+
+[profile.release]
+lto = "fat"
+
+[[example]]
+name = "encode_batch"
+path = "tokenizers/examples/encode_batch.rs"
+# required-features = ["http"]

@@ -1,0 +1,13 @@
+diff --git python/src/lib.rs python2/src/lib.rs
+index d28067f..eee11ea 100644
+--- python/src/lib.rs
++++ python2/src/lib.rs
+@@ -48,7 +48,7 @@ extern "C" fn child_after_fork() {
+ /// Tokenizers Module
+ #[pymodule]
+ pub fn tokenizers(m: &Bound<'_, PyModule>) -> PyResult<()> {
+-    let _ = env_logger::try_init_from_env("TOKENIZERS_LOG");
++    // let _ = env_logger::try_init_from_env("TOKENIZERS_LOG");
+ 
+     // Register the fork callback
+     #[cfg(target_family = "unix")]
