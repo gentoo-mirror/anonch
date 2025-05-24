@@ -9,7 +9,6 @@ DISTUTILS_USE_PEP517=maturin
 PYTHON_COMPAT=( python3_{10..13} )
 DISTUTILS_EXT=1
 DISTUTILS_SINGLE_IMPL=1
-# anstream@0.6.18
 CRATES="
 	aho-corasick@1.1.3
 	autocfg@1.4.0
@@ -174,12 +173,10 @@ src_prepare() {
 }
 
 src_configure() {
-	# local myfeatures=(
-	#    target_os=linux
-	# )
 	# cd tokenizers
 	# cargo_gen_config
-	cargo_src_configure --target="$(uname -m)-unknown-linux-gnu"
+	# --target="$(uname -m)-unknown-linux-gnu"
+	cargo_src_configure
 	# cd ../bindings/python
 	distutils-r1_src_configure
 }

@@ -42,7 +42,7 @@ path = "tokenizers/benches/unigram_benchmark.rs"
 
 [[bench]]
 name = "llama3"
-# required-features = ["http"]
+required-features = ["http"]
 harness = false
 path = "tokenizers/benches/llama3.rs"
 
@@ -131,8 +131,11 @@ smallvec = { version = "1.15.0", default-features = false, optional = true }
 default = ["onig", "esaxx_fast"]
 esaxx_fast = ["esaxx-rs/cpp"]
 # progressbar = ["indicatif"]
+# progressbar = []
 # http = ["hf-hub"]
+http = []
 # unstable_wasm = ["fancy-regex", "getrandom/js"]
+# unstable_wasm = []
 # rustls-tls = ["hf-hub?/rustls-tls"]
 
 # [dev-dependencies]
@@ -148,4 +151,4 @@ lto = "fat"
 [[example]]
 name = "encode_batch"
 path = "tokenizers/examples/encode_batch.rs"
-# required-features = ["http"]
+required-features = ["http"]
