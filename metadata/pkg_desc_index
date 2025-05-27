@@ -8,6 +8,7 @@ dev-libs/gumbo 0.12.1 0.12.2 0.12.2-r1: The HTML5 parsing algorithm implemented 
 dev-libs/tree-sitter-yaml 0.7.0: YAML grammar for Tree-sitter
 net-analyzer/hydra 9.5-r10 9.5-r11: Parallelized network login hacker
 net-libs/tdlib 1.8.29 1.8.45: Cross-platform library for building Telegram clients
+net-misc/proxychains 4.14 4.17 4.17-r1: force any tcp connections to flow through a proxy (or proxy chain)
 sci-libs/unhubbed-transformers 4.45.0: Transformers, sans integration with Huggingface hub.
 sci-ml/safetensors 0.4.5-r88882 0.5.3-r88881: Simple, safe way to store and distribute tensors
 sci-ml/tokenizers 0.21.0 0.21.1-r1 0.21.1-r88881: Implementation of today's most used tokenizers
