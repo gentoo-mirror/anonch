@@ -6,6 +6,7 @@ app-misc/kbdtimeout 0.1: A keyboard daemon that execute command if there was no 
 app-misc/keyd 2.5.0 2.5.0-r1: A key remapping daemon for linux
 dev-libs/gumbo 0.12.1 0.12.2 0.12.2-r1: The HTML5 parsing algorithm implemented as a pure C99 library
 dev-libs/tree-sitter-yaml 0.7.0: YAML grammar for Tree-sitter
+games-engines/gemrb 0.9.1 0.9.4 9999: Reimplementation of the Infinity engine
 net-analyzer/hydra 9.5-r10 9.5-r11: Parallelized network login hacker
 net-libs/tdlib 1.8.29 1.8.45: Cross-platform library for building Telegram clients
 net-misc/proxychains 4.14 4.17 4.17-r1: force any tcp connections to flow through a proxy (or proxy chain)
