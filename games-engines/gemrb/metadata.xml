@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>goduck777@gmail.com</email>
+		<name>Chang Liu</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">gemrb/gemrb</remote-id>
+		<bugs-to>https://github.com/gemrb/gemrb/issues</bugs-to>
+		<changelog>https://github.com/gemrb/gemrb/blob/master/NEWS</changelog>
+		<doc lang="en">https://gemrb.org/Documentation.html</doc>
+	</upstream>
+	<longdescription lang="en">
+		GemRB is a portable open-source implementation of Bioware’s 8 Infinity Engine versions.
+		Runs the Baldur’s Gate 1/2, Icewind Dale and Planescape: Torment games, their expansions and mods
+	</longdescription>
+</pkgmetadata>
