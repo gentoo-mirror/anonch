@@ -3,9 +3,11 @@
 - sci-libs/unhubbed-transformers - disable tokenizers, pyyaml, huggingface_hub dependencies
 - sys-kernel/rtl88x2bu-driver - Driver for WIFI USB RTL8822BU and install script (not require firmware)
 - games-engines/gemrb-0.9.4 - Baldur's Gate 1 and 2, Icewind Dale 1 and 2, Planescape: Torment and their mods.
+- net-libs/gumbo - HTML5 parsing library in C. - added Python bindings
+
 Telega - Unoffical Telegram client. Include:  net-libs/tdlib, app-emacs/rainbow-identifiers, app-emacs/visual-fill-column
 
-net-libs/gumbo - HTML5 parsing library in C. - added Python bindings
+
 
 Removed
 - sci-libs/caffe2-2.4.0-r2  - disable sci-libs/kineto, +numpy -> numpy
