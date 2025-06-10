@@ -4,7 +4,10 @@
 - sys-kernel/rtl88x2bu-driver - Driver for WIFI USB RTL8822BU and install script (not require firmware)
 - games-engines/gemrb-0.9.4 - Baldur's Gate 1 and 2, Icewind Dale 1 and 2, Planescape: Torment and their mods.
 - net-libs/gumbo - HTML5 parsing library in C. - added Python bindings
-- app-misc/heaviest - small script that allow to get most heavy process name for reccent several minutes.
+- app-misc/heaviest - Own daemon and command that allow to get most heavy process name for reccent several minutes.
+- app-misc/kbdtimeout - Own daemon that allow to execute command (for ex. block PC) if no keys was pressed for some time.
+- app-misc/keyd - remapping keys in X11 and Wayland per applications and global.
+
 
 Telega - Unoffical Telegram client. Include:  net-libs/tdlib, app-emacs/rainbow-identifiers, app-emacs/visual-fill-column
 
