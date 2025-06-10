@@ -16,15 +16,18 @@ files = sorted(glob.glob('/tmp/top_procs/top_procs_*'))
 
 # Initialize data structures
 cpu_sum = defaultdict(float)
-cpu_wt = defaultdict(float)
+wt_sum = 0
 
 lfs = len(files)
 # Process all files in one pass
-for idx, file_path in enumerate(files):
+for idx, file_path in enumerate(files): # 0, 1
     if WEIGHT_MULTIPLIER:
-        weight = 1 + (lfs-idx) / WEIGHT_MULTIPLIER
+        weight = 1 + (lfs - idx) / WEIGHT_MULTIPLIER
     else:
-        weight = 1 + (lfs-idx) / len(files) / 1.5
+        # 20 - 0 = 20/20  / 1.5 = 0.6
+        # 20 - 18 = 0.06
+        weight = 1 + (lfs - idx) / len(files) / 1.5
+    wt_sum += weight
     if DEBUG:
         print(f'Processing {file_path} with weight {weight}')
 
@@ -42,7 +45,6 @@ for idx, file_path in enumerate(files):
 
                         # Accumulate directly in Python - no subprocess calls
                         cpu_sum[proc] += cpu * weight
-                        cpu_wt[proc] += weight
 
                         if DEBUG:
                             print(f'  Line: CPU={cpu}, Proc={proc}')
@@ -61,11 +63,7 @@ max_proc = ''
 max_val = 0
 
 for proc, sum_val in cpu_sum.items():
-    wt = cpu_wt[proc]
-    if wt > 0:
-        avg = sum_val / wt
-    else:
-        avg = 0
+    avg = sum_val / wt_sum
 
     if DEBUG:
         print(f'  Proc={proc} : Weighted Sum={sum_val}, Total Weight={wt}, Weighted Avg={avg}')
