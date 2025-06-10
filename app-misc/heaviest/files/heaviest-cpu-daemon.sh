@@ -33,10 +33,7 @@ while true; do
     done
 
     # 2. Write new top processes to top_procs_01
-    # Using ps for a more lightweight snapshot.
-    # ps -eo pid,user,pcpu,pmem,cmd --sort=-pcpu | head -n 21
-    # ^ This gets header + 20 processes
-    ps -eo pid,user,pcpu,pmem,cmd --sort=-pcpu | grep -v -e "ps -eo pid,user,pcpu,pmem,cmd --sort=-pcpu" -e "/usr/bin/heaviest-get" | head -n 21 > "$LOG_DIR/top_procs_01"
+    top -bn1 -c -o +%CPU -w 512 | head -n $((MAX_FILES + 8)) | tail -n +8 | awk '{if ($9 > 0.0) print}' | grep -v -e "heaviest-cpu-daemon" -e "top -bn1 -c -o +%CPU -w 512" > "$LOG_DIR/top_procs_01"
 
     # 3. Wait before repeating
     sleep 2
