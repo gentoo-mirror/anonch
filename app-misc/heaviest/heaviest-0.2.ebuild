@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DESCRIPTION="A daemon that collect TOP for CPU usage by processess for some time."
+DESCRIPTION="Daemon and command that allow to get most heavy process name for reccent several minutes."
 HOMEPAGE="https://github.com/Anoncheg1/anonch-overlay"
 LICENSE="AGPL-3"
 SLOT="0"
