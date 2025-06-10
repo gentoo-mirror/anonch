@@ -2,12 +2,13 @@
 import os
 import glob
 import sys
+import re
 from collections import defaultdict
 
 # Add a debug flag that can be enabled via command line argument
 DEBUG = "--debug" in sys.argv
 
-WEIGHT_MULTIPLIER = None
+WEIGHT_MULTIPLIER: float = 1.5
 if len(sys.argv) > 1:
     WEIGHT_MULTIPLIER = float(sys.argv[1])
 
@@ -21,27 +22,30 @@ wt_sum = 0
 lfs = len(files)
 # Process all files in one pass
 for idx, file_path in enumerate(files): # 0, 1
-    if WEIGHT_MULTIPLIER:
-        weight = 1 + (lfs - idx) / WEIGHT_MULTIPLIER
-    else:
-        # 20 - 0 = 20/20  / 1.5 = 0.6
-        # 20 - 18 = 0.06
-        weight = 1 + (lfs - idx) / len(files) / 1.5
+    # 20 - 0 = 20/20  / 1.5 = 0.6
+    # 20 - 18 = 0.06
+    weight = (1 + (lfs - idx)) / len(files) / WEIGHT_MULTIPLIER
+
     wt_sum += weight
     if DEBUG:
         print(f'Processing {file_path} with weight {weight}')
 
     try:
+        if os.path.getsize(file_path) == 0:
+            continue
         with open(file_path, 'r') as f:
             for line in f:
-                parts = line.split()
-                # Adjust for ps output:
-                # PID USER %CPU %MEM COMMAND
-                # 0   1    2    3    4  (index)
-                if len(parts) >= 5: # 'ps' output has at least 5 parts
+                # We use re.split for more robust splitting across multiple spaces.
+                parts = re.split(r'\s+', line)
+
+                if len(parts) >= 12:
                     try:
-                        cpu = float(parts[2])  # %CPU is at index 2 (3rd field)
-                        proc = parts[4]        # COMMAND is at index 4 (5th field)
+                        cpu = float(parts[8])  # %CPU
+                        proc = parts[11]        # COMMAND is at index 4 (5th field)
+                        proc_full = " ".join(parts[11:])
+
+                        # if proc == "-bash":
+                        # print(idx, file_path, cpu, cpu * weight, proc_full)
 
                         # Accumulate directly in Python - no subprocess calls
                         cpu_sum[proc] += cpu * weight
