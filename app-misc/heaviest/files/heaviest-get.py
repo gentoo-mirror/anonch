@@ -32,10 +32,13 @@ for idx, file_path in enumerate(files):
         with open(file_path, 'r') as f:
             for line in f:
                 parts = line.split()
-                if len(parts) >= 12:
+                # Adjust for ps output:
+                # PID USER %CPU %MEM COMMAND
+                # 0   1    2    3    4  (index)
+                if len(parts) >= 5: # 'ps' output has at least 5 parts
                     try:
-                        cpu = float(parts[8])  # $9 in awk is index 8 in Python
-                        proc = parts[11]       # $12 in awk is index 11 in Python
+                        cpu = float(parts[2])  # %CPU is at index 2 (3rd field)
+                        proc = parts[4]        # COMMAND is at index 4 (5th field)
 
                         # Accumulate directly in Python - no subprocess calls
                         cpu_sum[proc] += cpu * weight
