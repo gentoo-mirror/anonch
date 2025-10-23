@@ -10,5 +10,5 @@ LICENSE=GPL-2
 PROPERTIES=live
 RDEPEND=freetype? ( media-libs/freetype ) truetype? ( media-fonts/corefonts ) media-libs/libpng:0 >=media-libs/libsdl2-2.0[video] media-libs/libvorbis media-libs/openal[sdl] media-libs/sdl2-mixer[vorbis] sys-libs/zlib || ( dev-lang/python:3.13 dev-lang/python:3.12 dev-lang/python:3.11 )
 SLOT=0
-_eclasses_=eapi8-dosym	5ac4857ad078256d939c44f7c64197a9	multiprocessing	1e32df7deee68372153dca65f4a7c21f	toolchain-funcs	98d9f464d912ae6b7316fb8a3721f5db	python-utils-r1	0b620dd604ab8af0bc9cd1bcc66d4f7c	python-any-r1	891415dfe39ad9b41b461f2b86354af0	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	2d36accef058c00889b1f93ea4bc4061	git-r3	875eb471682d3e1f18da124be97dcc81
+_eclasses_=eapi8-dosym	5ac4857ad078256d939c44f7c64197a9	multiprocessing	1e32df7deee68372153dca65f4a7c21f	toolchain-funcs	98d9f464d912ae6b7316fb8a3721f5db	python-utils-r1	dbb8c4d794033ad7e7221eaf567a6c90	python-any-r1	891415dfe39ad9b41b461f2b86354af0	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	2d36accef058c00889b1f93ea4bc4061	git-r3	875eb471682d3e1f18da124be97dcc81
 _md5_=7558ccc950ff07e2ffa59a79f2e93216
